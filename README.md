@@ -1,3 +1,4 @@
+
 # 🚗 Arquitectura Terraform - Flota de Vehículos Blindados
 
 Proyecto de infraestructura en Azure utilizando Terraform para la gestión de una flota de vehículos blindados con análisis de datos en tiempo real.
@@ -19,13 +20,13 @@ Proyecto de infraestructura en Azure utilizando Terraform para la gestión de un
 
 ## 📖 Descripción del Proyecto
 
-Este proyecto implementa una infraestructura completa en Azure usando Terraform para una empresa de seguridad y logística que lanza una aplicación de renta de vehículos blindados. 
+Este proyecto implementa una infraestructura completa en Azure usando Terraform para una empresa de seguridad y logística que lanza una aplicación de renta de vehículos blindados.
 
 ### Objetivos
 
-✅ Gestionar operaciones en tiempo real: reservas, contratos y estado de la flota  
-✅ Permitir analítica avanzada sin afectar las operaciones transaccionales  
-✅ Soportar dos cargas de trabajo separadas: **OLTP** (operacional) y **OLAP** (analítica)
+- ✅ Gestionar operaciones en tiempo real: reservas, contratos y estado de la flota  
+- ✅ Permitir analítica avanzada sin afectar las operaciones transaccionales  
+- ✅ Soportar dos cargas de trabajo separadas: **OLTP** (operacional) y **OLAP** (analítica)
 
 ---
 
@@ -99,110 +100,6 @@ Almacén seguro centralizado para:
 - ✅ Secretos de aplicación
 - ✅ Control de acceso mediante RBAC
 - ✅ Auditoría completa
-
----
-
-## ✅ Checklist de Preparación
-
-Antes de comenzar, asegúrate de tener instalado:
-
-- ✅ Cuenta de Azure con suscripción activa
-- ✅ Azure CLI instalado y configurado
-- ✅ Terraform instalado (versión 1.0+)
-- ✅ Git instalado
-- ✅ Cuenta de GitHub
-- ✅ Editor de código (VS Code recomendado)
-
----
-
-## 🔧 Guía de Instalación
-
-### 1. Configurar Azure CLI
-
-```bash
-# Instalar Azure CLI
-# Windows: https://aka.ms/installazurecliwindows
-# macOS: brew install azure-cli
-# Linux: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-# Iniciar sesión
-az login
-
-# Verificar la suscripción
-az account show
-
-# Establecer la suscripción correcta
-az account list --output table
-az account set --subscription "NOMBRE_O_ID_DE_TU_SUSCRIPCION"
-```
-
----
-
-### 2. Instalar Terraform
-
-```bash
-# Verificar si ya está instalado
-terraform --version
-
-# Si no está instalado:
-# Windows: Descargar de https://www.terraform.io/downloads
-# macOS: brew install terraform
-# Linux:
-wget https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
-unzip terraform_1.6.0_linux_amd64.zip
-sudo mv terraform /usr/local/bin/
-```
-
----
-
-### 3. Clonar Repositorio
-
-```bash
-git clone https://github.com/MiltonAlvarado/arquitectura_terraform_flota_vehiculos.git
-cd arquitectura_terraform_flota_vehiculos
-```
-
----
-
-### 4. Personalizar Variables
-
-Editar `terraform.tfvars` con los valores únicos:
-
-```hcl
-resource_group_name        = "rg-vehiculos-prod"
-location                   = "eastus"
-sql_server_name            = "sql-vehiculos-2025"
-storage_account_name       = "datalakeveh2025"  # ¡Único globalmente!
-data_factory_name          = "adf-vehiculos"
-databricks_workspace_name  = "dbw-vehiculos"
-key_vault_name             = "kv-vehiculos-prod"
-```
-
-**Nota importante:** El `storage_account_name` debe:
-- Ser único en todo Azure
-- Contener solo letras minúsculas y números
-- Tener entre 3-24 caracteres
-
----
-
-### 5. Desplegar Infraestructura
-
-```bash
-# 1. Inicializar Terraform
-terraform init
-
-# 2. Validar sintaxis
-terraform validate
-
-# 3. Ver qué se va a crear
-terraform plan
-
-# 4. Desplegar recursos
-terraform apply
-
-# Cuando pregunte "Do you want to perform these actions?"
-# Respuesta: yes
-```
 
 ---
 
@@ -307,23 +204,3 @@ Recursos corriendo 24/7:
 | **TOTAL** | - | **~$22 USD/mes** |
 
 ---
-
-## 📝 Información Adicional
-
-- **Framework:** Terraform
-- **Cloud Provider:** Microsoft Azure
-- **Estado del Proyecto:** Completado
-- **Última Actualización:** 13 de Noviembre de 2025
-
----
-
-## 👨‍💻 Autor
-
-Proyecto creado como parte del programa de **Sistemas Expertos**.
-
----
-
-## 📄 Licencia
-
-Este proyecto es de uso educativo.
-
